@@ -23,3 +23,26 @@ do
   kubectl get $resource --all-namespaces -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}'
 done
 ```
+
+
+```
+  containers:
+  - name: my-container
+    image: my-image:latest
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 80
+    command: [ "/bin/bash", "-c" ]
+    args:
+     - 
+        echo "check if my service is running and run commands";
+        while true; do
+            service my-service status > /dev/null || service my-service start;
+            if condition; then
+                    echo "run commands";
+            else
+                    echo "run another command";
+            fi;
+        done
+        echo "command completed, proceed ....";
+```
