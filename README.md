@@ -1,5 +1,8 @@
 ### Find all the resource in namespace
 ```
+kubectl -n jupyter get svc,deploy,ds,sts,cm,secret,netpol,role,rolebinding,pvc,serviceintentions
+```
+```
 NAMES="$(kubectl api-resources \
                  --namespaced \
                  --verbs list \
