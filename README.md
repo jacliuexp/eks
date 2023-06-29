@@ -10,3 +10,6 @@ NAMES="$(kubectl api-resources \
 # --show-kind is optional
 kubectl get "${NAMES:0:-1}" --show-kind
 ```
+```
+kgetall='kubectl get namespace,replicaset,secret,nodes,job,daemonset,statefulset,ingress,configmap,pv,pvc,service,deployment,pod --all-namespaces'
+```
