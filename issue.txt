@@ -1,0 +1,2 @@
+- 2 certificate applied to the same load balancer
+- build docker image for diff environment: kubernet init docker
