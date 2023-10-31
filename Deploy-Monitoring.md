@@ -24,4 +24,10 @@ loki:
      region: us-east-1
 minio:
 ```
+##### Issue
+myloki->charts->loki->charts->minio+grafana-agent-operator
+myloki: helm template -f values-dev.yaml . | grep minio   # still show minio due to charts->loki->charts->minio+grafana...
+copy over values-dev.yaml to loki (loki->charts->minio+grafana-agent-operator): loki: helm template -f values-dev.yaml . | grep minion # minio doesn't show
+
+
 
