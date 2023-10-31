@@ -3,11 +3,7 @@
 helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 helm pull grafana/loki  # -> loki-5.36.0.tgz
-mkdir loki
-cp loki-5.36.0.tgz loki
-cd loki
 tar -zxvf loki-5.36.0.tgz
-rm -fr loki-5.36.0.tgz
 cd loki
 # copy over values-dev.yaml
 ```
