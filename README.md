@@ -57,4 +57,13 @@ do
   echo "kubectl  -n monitoring get prometheusrule $line -o yaml >$line.yaml"
 done < "$input"
 ```
+```
+# escape brace curly
+1.      proxy.token: "{{ .proxy.token }}"    
+        {{ $openblock := "\x7B\x7B" }}
+        {{ $closeblock := "\x7D\x7D" }}
+        proxy.token: "{{ $openblock }}.mykey{{ $closeblock }}"
+2.  {{ => {{ "{{" }}
+    }} => {{ "}}" }}
+```
 
