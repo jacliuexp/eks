@@ -46,3 +46,15 @@ done
         done
         echo "command completed, proceed ....";
 ```
+
+```
+k -n monitoring get prometheusrule --no-headers -o custom-columns=":metadata.name"
+
+$ cat a.sh
+input="list.txt"
+while read -r line
+do
+  echo "kubectl  -n monitoring get prometheusrule $line -o yaml >$line.yaml"
+done < "$input"
+```
+
