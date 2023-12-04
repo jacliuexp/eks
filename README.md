@@ -48,7 +48,7 @@ done
 ```
 
 ```
-k -n monitoring get prometheusrule --no-headers -o custom-columns=":metadata.name"
+k -n monitoring get prometheusrule --no-headers -o custom-columns=":metadata.name" k -n monitoring get secret alertmanager-main -o json  | jq -r 
 
 $ cat a.sh
 input="list.txt"
@@ -66,4 +66,7 @@ done < "$input"
 2.  {{ => {{ "{{" }}
     }} => {{ "}}" }}
 ```
-
+# JQ key contains quote
+```
+ k -n monitoring get secret alertmanager-main -o json  | jq -r '.data."alertmanager.yaml"'
+```
