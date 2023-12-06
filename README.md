@@ -1,4 +1,4 @@
-### Find all the resource in namespace
+##### Find all the resource in namespace
 ```
 kubectl -n jupyter get svc,deploy,ds,sts,cm,secret,netpol,role,rolebinding,pvc,serviceintentions
 ```
@@ -16,7 +16,6 @@ kubectl get "${NAMES:0:-1}" --show-kind
 ```
 kgetall='kubectl get namespace,replicaset,secret,nodes,job,daemonset,statefulset,ingress,configmap,pv,pvc,service,deployment,pod --all-namespaces'
 ```
-
 ```
 for resource in [$(kubectl api-resources -o name | tr "\n" " ")]
 do 
@@ -24,7 +23,7 @@ do
 done
 ```
 
-
+##### Run Command/Args 
 ```
   containers:
   - name: my-container
@@ -46,9 +45,10 @@ done
         done
         echo "command completed, proceed ....";
 ```
-
+##### Get only resource names: like pod names
 ```
-k -n monitoring get prometheusrule --no-headers -o custom-columns=":metadata.name" k -n monitoring get secret alertmanager-main -o json  | jq -r 
+k -n monitoring get prometheusrule --no-headers -o custom-columns=":metadata.name"
+k -n monitoring get secret alertmanager-main -o json  | jq -r 
 
 $ cat a.sh
 input="list.txt"
@@ -57,6 +57,7 @@ do
   echo "kubectl  -n monitoring get prometheusrule $line -o yaml >$line.yaml"
 done < "$input"
 ```
+##### Work over the {{ in helm
 ```
 # escape brace curly
 1.      proxy.token: "{{ .proxy.token }}"    
@@ -65,6 +66,7 @@ done < "$input"
         proxy.token: "{{ $openblock }}.mykey{{ $closeblock }}"
 2.  {{ => {{ "{{" }}
     }} => {{ "}}" }}
+    ex: {{ aaa }} =>  {{ "{{" }} aaa {{ "}}" }}
 ```
 ##### JQ key contains quote
 ```
