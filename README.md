@@ -66,11 +66,11 @@ done < "$input"
 2.  {{ => {{ "{{" }}
     }} => {{ "}}" }}
 ```
-### JQ key contains quote
+##### JQ key contains quote
 ```
  k -n monitoring get secret alertmanager-main -o json  | jq -r '.data."alertmanager.yaml"'
 ```
-### kubectl debug
+##### kubectl debug
 ```
 k debug mypod --image=curlimages/curl -it  -- sh
 ```
