@@ -73,6 +73,7 @@ done < "$input"
  k -n monitoring get secret alertmanager-main -o json  | jq -r '.data."alertmanager.yaml"'
 ```
 ##### kubectl debug
+https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/
 ```
 k debug mypod --image=curlimages/curl -it  -- sh
 k debug mypod -it --image=nginx --target=container1 -- bash
