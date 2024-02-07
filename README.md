@@ -75,4 +75,6 @@ done < "$input"
 ##### kubectl debug
 ```
 k debug mypod --image=curlimages/curl -it  -- sh
+k debug mypod -it --image=nginx --target=container1 -- bash
+kubectl debug -it ephemeral-demo --image=busybox:1.28 --target=ephemeral-demo
 ```
