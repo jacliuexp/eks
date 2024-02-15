@@ -3,6 +3,10 @@
 kubectl -n jupyter get svc,deploy,ds,sts,cm,secret,netpol,role,rolebinding,pvc,serviceintentions
 ```
 ```
+ k -n monitoring get svc,deploy,ds,sts,cm,secret,netpol,role,rolebinding,pvc,serviceintentions --no-headers=true -o name | awk -F "/" '{print "kubectl -n monitoring get "  $1 " "  $2 " -o yaml | kubectl neat >"  $1"-"$2".yml"}';  > a.txt
+
+```
+```
 NAMES="$(kubectl api-resources \
                  --namespaced \
                  --verbs list \
