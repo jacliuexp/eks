@@ -88,7 +88,5 @@ kubectl debug -it ephemeral-demo --image=busybox:1.28 --target=ephemeral-demo
 ```
 ##### node session
 ```
-kubectl get nodes --no-headers | head -n 1            
-  ip-10-10-10-10.ec2.internal   Ready                      <none>   8d      v1.22.17-eks-48e63af
 kubectl node-ssm start-session --target ip-10-10-10-10.ec2.internal
 ```
