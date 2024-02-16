@@ -3,7 +3,7 @@
 kubectl -n jupyter get svc,deploy,ds,sts,cm,secret,netpol,role,rolebinding,pvc,serviceintentions
 ```
 ```
-k -n monitoring get svc,deploy,ds,sts,cm,secret,pdb,netpol,role,rolebinding,pvc,serviceintentions --no-headers=true -o name | awk -F "/" '{print "kubectl -n monitoring get "  $1 " "  $2 " -o yaml | kubectl neat >"  $1"-"$2".yml"}'  > a.txt
+k -n monitoring get svc,deploy,ds,sts,cm,secret,sa,pdb,netpol,role,rolebinding,pvc,serviceintentions --no-headers=true -o name | awk -F "/" '{print "kubectl -n monitoring get "  $1 " "  $2 " -o yaml | kubectl neat >"  $1"-"$2".yml"}'  > a.txt
 
 # kubectl -n monitoring get service alertmanager-main -o yaml | kubectl neat >service-alertmanager-main.yml
 
