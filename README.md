@@ -90,3 +90,8 @@ kubectl debug -it ephemeral-demo --image=busybox:1.28 --target=ephemeral-demo
 ```
 kubectl node-ssm start-session --target ip-10-10-10-10.ec2.internal
 ```
+##### EKS upgrae
+```
+kubent  # check deprecated APIs
+```
+
