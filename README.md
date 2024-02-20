@@ -92,6 +92,7 @@ kubectl node-ssm start-session --target ip-10-10-10-10.ec2.internal
 ```
 ##### EKS upgrae
 https://repost.aws/knowledge-center/eks-plan-upgrade-cluster
+https://aws.amazon.com/blogs/containers/backup-and-restore-your-amazon-eks-cluster-resources-using-velero/
 ```
 kubent  # check deprecated APIs
 ```
