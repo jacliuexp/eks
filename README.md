@@ -96,4 +96,10 @@ kubectl node-ssm start-session --target ip-10-10-10-10.ec2.internal
 ```
 kubent  # check deprecated APIs
 ```
+###### Copy log
+```
+for i in $(kubectl get --no-headers=true pods -o name | awk -F "/" '{print $2}'); do echo $i; done
+# for i in $(kubectl get --no-headers=true pods -o name | awk -F "/" '{print $2}'); do kubectl cp $i:/log $PWD/; done
+```
+
 
