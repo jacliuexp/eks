@@ -107,7 +107,7 @@ kubent  # check deprecated APIs
 for i in $(kubectl get --no-headers=true pods -o name | awk -F "/" '{print $2}'); do echo $i; done
 # for i in $(kubectl get --no-headers=true pods -o name | awk -F "/" '{print $2}'); do kubectl cp $i:/log $PWD/; done
 ```
-###### Delete ns issue
+###### Delete Namespace issue
 https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=console-namespace-is-stuck-in-terminating-state
 ```
 kubectl get namespaces
