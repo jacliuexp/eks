@@ -112,5 +112,7 @@ https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=console-namespace-is-stuck
 ```
 kubectl get namespaces
 kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n loki
+kubectl get APIService <version>.<api-resource>
+kubectl describe APIService <version>.<api-resource>  #try to fix the issue
 ```
 
