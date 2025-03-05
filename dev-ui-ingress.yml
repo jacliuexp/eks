@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ui-aaa-bbb-ui
+  namespace: ui-aaa
+  labels:
+    app.kubernetes.io/instance: ui-aaa
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: bbb-ui
+    app.kubernetes.io/version: 1.16.0
+    helm.sh/chart: bbb-ui-0.1.0
+  annotations:
+    alb.ingress.kubernetes.io/backend-protocol: HTTPS
+    alb.ingress.kubernetes.io/certificate-arn: >-
+      arn:aws:acm:us-east-1:12223333:certificate/1122223-333333
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTPS
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=605
+    alb.ingress.kubernetes.io/load-balancer-name: dev-ui-ccc
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-2017-01
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/target-type: ip
+    kubernetes.io/ingress.class: alb
+spec:
+  rules:
+    - host: aaa.us.bbb.local
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: ui-aaa-bbb-ui
+                port:
+                  number: 443
